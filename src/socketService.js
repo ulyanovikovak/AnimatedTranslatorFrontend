@@ -3,7 +3,7 @@ import openSocket from "socket.io-client";
 import { activeChatAction } from "./stateManegement/actions";
 import { store } from "./stateManegement/store";
 
-const SOCKET_URL = "https://animachat.ru:2053";
+const SOCKET_URL = "https://api.animachat.ru:2053";
 let socket;
 
 const SocketService = () => {

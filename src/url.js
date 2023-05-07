@@ -1,4 +1,4 @@
-const BASE_URL = "https://animachat.ru/";
+const BASE_URL = "https://api.animachat.ru/";
 
 export const LOGIN_URL = BASE_URL + "user/login";
 export const REGISTER_URL = BASE_URL + "user/register";
