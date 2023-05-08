@@ -63,7 +63,7 @@ const Login = (props) => {
         </div>
       ) : (
         <div className="inner">
-          <div className="logo">DEVTOT</div>
+          <div className="logo">Animation Chat</div>
           <div className="title">Sign in</div>
           <AuthForm
             login
