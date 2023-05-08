@@ -77,90 +77,93 @@ button {
   width: 100%;
   height: 50px;
   border-radius: 6px;
-  background-color: $backcolour;;
-  color: $textColour;
-  border-style: dotted;
-  border-color: #4169E1;
-  outline-color: #4169E1;
+  background-color: $secondaryColor;
+  color: white;
+  border: none;
+  outline: none;
   font-weight: 500;
   font-size: 15px;
   cursor: pointer;
-  margin-bottom: 20px;
 }
 
-.loginContainer{
+.loginContainer {
   width: 100%;
   padding: 50px 20px;
   background-color: $primaryColor;
   min-height: 100vh;
   box-sizing: border-box;
 
-  .inner{
-      max-width: 500px;
-      margin: 0 auto;
+  .inner {
+    max-width: 400px;
+    margin: 0 auto;
   }
 
-  .title{
-      font-size: 26px;
-      text-align: center;
-      color: $textColour;
-      margin-bottom: 50px;
+  .title {
+    font-size: 26px;
+    text-align: center;
+    color: rgba(white, 0.65);
+    margin-bottom: 50px;
   }
-  
-  .input-field{
-      width: 100%;
-      margin-top: 20px;
-      padding: 5px 0;
-      background-color: $backcolour;
-      border-style: dotted;
-      border-color: #4169E1;
-      outline-color: #4169E1;
-      
+
+  .input-field {
+    width: 100%;
+
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(white, 0.1);
+    outline: none;
+    color: white;
+    box-sizing: border-box;
   }
+
   .input-container {
     position: relative;
-
+    margin-top: 20px;
     img {
       position: absolute;
-      right: -5%;
-      top: 25px;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
-  a{
-      margin-top: 10px;
+
+  a {
+    margin-top: 10px;
   }
-  bottom: {
-      margin-top: 40px;
-      margin-bottom: 20px;
-  };
-  .socialButton{
-      height: 50px;
-      background-color:$backcolour;
-      border-radius: 6px;
-      border-style: dotted;
-      border-color: #4169E1;
-      outline-color: #4169E1;
-      color: #6495ED;
-      align-items: center;
-      display:flex;
-      justify-content: center;
-      font-size: 20px;
-      cursor: pointer;
-      img{
-          margin-right: 5px;
-      }
+
+  button {
+    margin-top: 40px;
+    margin-bottom: 20px;
   }
-  .switchOption{
-      margin-top: 50px;
-      color: #6495ED;
-      text-align: center;
-      b{
-          font-weight: 500;
-          color: $textColour
-      }
+
+  .socialButton {
+    height: 50px;
+    background-color: rgba(black, 0.19);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+
+    img {
+      margin-right: 10px;
+    }
+  }
+
+  .switchOption {
+    margin-top: 50px;
+    color: rgba(white, 0.33);
+    text-align: center;
+
+    b {
+      font-weight: 500;
+      color: $secondaryColor;
+    }
   }
 }
-
 
 .home-container {
   background-color: $primaryColor;
@@ -176,11 +179,23 @@ button {
     height: 24px;
   }
 
+  .overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.1);
+    z-index: 1;
+  }
+
   .side {
     width: 350px;
     box-sizing: border-box;
     background-color: $primaryColorLight;
     position: relative;
+    transition: .5s ease;
+
 
     .top {
       padding: 30px;
@@ -189,6 +204,8 @@ button {
         height: 18px;
       }
     }
+
+
   }
 
   .main {
@@ -201,14 +218,72 @@ button {
       padding: 0 50px;
       height: 80px;
 
+      @media screen and (max-width: 480px) {
+        padding: 0 20px;
+      }
+
       .rightItems {
+        img{
+          @media screen and (max-width: 480px) {
+            width: 20px;
+            height: 20px;
+          }
+        }
         img:first-child {
           width: 18px;
           height: 18px;
           margin-right: 20px;
+
+          @media screen and (max-width: 480px) {
+            width: 15px;
+            height: 15px;
+          }
         }
       }
     }
+  }
+
+  @media screen and (max-width: 768px){
+    display: block;
+    position: relative;
+
+    .side{
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      z-index: 11;
+      top: 0;
+
+      &.close{
+        left: -350px;
+
+        & ~ .overlay{
+          display: none;
+        }
+      }
+    }
+    .main{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.mobile{
+  display: none;
+}
+
+.desktop{
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile{
+    display: block;
+  }
+  .desktop{
+    display: none;
   }
 }
 
@@ -247,28 +322,42 @@ button {
     width: 50px;
     height: 50px;
     border-radius: 50px;
-    background-color: darken($primaryColor, 20%);
+    background-color: darken($primaryColor, 5%);
     margin-right: 15px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    @media screen and (max-width: 480px) {
+      width: 35px;
+      height: 35px;
+    }
   }
 
   .name {
     font-size: 16px;
     font-weight: 500;
     color: white;
+
+    @media screen and (max-width: 480px) {
+      font-size: 13px;
+    }
   }
 
   .subContent {
     font-size: 12px;
     color: rgba(white, 0.4);
+
+    @media screen and (max-width: 480px) {
+      font-size: 10px;
+    }
   }
   &.version2 {
     .imageCon {
       width: 40px;
       height: 40px;
       margin-right: 10px;
+      background-color: darken($primaryColor, 5%);
     }
 
     .name {
@@ -345,6 +434,11 @@ button {
   overflow: auto;
   width: 100%;
   box-sizing: border-box;
+  transition: .5s ease;
+
+  @media screen and (max-width: 480px) {
+    padding: 20px;
+  }
 }
 
 .messageZone {
@@ -353,17 +447,40 @@ button {
   padding: 10px 40px;
   box-sizing: border-box;
 
-  textarea {
-    margin-top: 10px;
+  @media screen and (max-width: 480px) {
+    padding: 10px 20px;
+    height: 120px;
+
+    img{
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  input {
+    margin-top: 20px;
     width: 100%;
     border-radius: 4px;
     background-color: $primaryColorLight;
     border: none;
     padding: 10px;
-    height: 70%;
+    height: 50px;
     box-sizing: border-box;
     outline: none;
     color: white;
+
+    @media screen and (max-width: 480px) {
+      margin-top: 10px;
+    }
+  }
+
+  button {
+    width: unset;
+    height: unset;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
   }
 }
 
@@ -438,6 +555,7 @@ button {
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+            background-color: darken($primaryColor, 5%);
           }
 
           .point {
@@ -494,6 +612,19 @@ button {
         margin: 0 auto;
         margin-bottom: 50px;
       }
+
+      @media screen and (max-width: 500px) {
+        padding: 10px;
+
+        .inner{
+          flex-direction: column;
+
+          .leftHook{
+            margin-right: 0;
+            margin-bottom: 30px;
+          }
+        }
+      }
     }
   }
 
@@ -501,4 +632,63 @@ button {
     opacity: 1;
     visibility: visible;
   }
+}
+
+.authContainer {
+  background-color: $primaryColor;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.loader {
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-radius: 30px;
+  animation: rotate 500ms linear infinite;
+}
+
+.centerAll {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.errorHolder {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 10px;
+    cursor: pointer;
+  }
+}
+
+.noUser {
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+
+.clickable {
+  cursor: pointer;
 }
