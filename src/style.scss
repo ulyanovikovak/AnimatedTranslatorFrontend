@@ -5,8 +5,8 @@ $primaryFont: 'Comme', sans-serif;
 $secondaryFont: 'Mukta', sans-serif;
 
 
-$textColour2: hsl(180, 33%, 39%);
-$primaryColor: #c7e6e6;
+$textColour2: hsl(180, 31%, 42%);
+$primaryColor: #c7e5e5;
 $primaryColorLight: #496e9b;
 $secondaryColor: #69b0dc;
 $tertiaryColor: #12cdc9;
@@ -469,7 +469,7 @@ button {
     height: 50px;
     box-sizing: border-box;
     outline: none;
-    color: $textColour;
+    color: white;
 
     @media screen and (max-width: 480px) {
       margin-top: 10px;
