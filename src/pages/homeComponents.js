@@ -104,6 +104,8 @@ export const ProfileModal = (props) => {
     });
   };
 
+
+
   useEffect(() => {
     if(props.visible){
       setProfileData({
@@ -182,13 +184,22 @@ export const ProfileModal = (props) => {
               </label>
               <label>
                 <span>Language</span>
-                <input
+
+                <select value={profileData.language} onChange={onChange}>
+                  <option>russian</option>
+                  <option>english</option>
+                </select>
+                <p>
+                  {/* Язык: {value} */}
+                </p>
+
+                {/* <input
                   name="language"
                   value={profileData.language}
                   onChange={onChange}
                   disabled={props.view}
                   required
-                />
+            /> */}
               </label>
               <label>
                 <span>About</span>
