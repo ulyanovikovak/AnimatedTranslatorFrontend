@@ -189,8 +189,8 @@ export const ProfileModal = (props) => {
                   <option>russian</option>
                   <option>english</option>
                 </select>
-                <p>
-                   Язык: {value} 
+                <p >
+                   Язык: {profileData.language} 
                 </p>
 
                 {/* <input
