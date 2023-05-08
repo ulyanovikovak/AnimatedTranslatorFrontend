@@ -187,7 +187,7 @@ export const ProfileModal = (props) => {
 
                 <form value={profileData.language} name="language">
                   <select value={profileData.language} name="language" size="2">
-                  <option value="russian" >russian</option>
+                  <option value="russ" >russian</option>
                   <option value="english">english</option>
                 </select>
               </form>
