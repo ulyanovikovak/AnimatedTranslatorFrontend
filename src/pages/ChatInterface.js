@@ -207,7 +207,7 @@ function ChatInterface(props) {
             message={
                 item.message.startsWith("http") ? (
                 <img 
-                    src="item.message"
+                    src={item.message}
                     alt="new"
                 />
                 ) : (
