@@ -52,6 +52,10 @@ export const UserAvatar = (props) => {
   );
 };
 
+
+
+
+
 export const ChatBubble = (props) => {
   return (
     <div className={`chatbubbleCon ${props.bubbleType}`}>
