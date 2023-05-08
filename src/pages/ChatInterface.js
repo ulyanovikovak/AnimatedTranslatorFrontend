@@ -7,7 +7,7 @@ import { ChatBubble, ProfileModal, UserAvatar } from "./homeComponents";
 import settings from "../assets/settings.png";
 import Loader from "../components/loader";
 import { axiosHandler, errorHandler, getToken } from "../stateManegement/helper";
-import {MESSAGE_URL, CHECK_FAVORITE_URL, UPDATE_FAVORITE_URL, READ_MESSAGE_URL} from "../url";
+import {MESSAGE_URL, CHECK_FAVORITE_URL, UPDATE_FAVORITE_URL, READ_MESSAGE_URL, FILE_UPLOAD_URL} from "../url";
 import moment from "moment"
 import {activeChatAction, triggerRefreshUserListAction} from "../stateManegement/actions";
 import { store } from "../stateManegement/store";
@@ -201,12 +201,30 @@ function ChatInterface(props) {
           <div className="noUser">No message yet</div>
         ) : (
           messages.map((item, key) => (
+
             <ChatBubble
+            bubbleType={handleBubbleType(item)}
+            message={
+                item.message.startsWith("http") ? (
+                <img 
+                    src="item.message"
+                    alt="new"
+                />
+                ) : (
+                    item.message
+                )
+            }
+            time={item.created_at ? moment(item.created_at).format("YYYY-MM-DD hh:mm a") : ""}
+            key={key}
+        />
+
+
+            /* <ChatBubble
               bubbleType={handleBubbleType(item)}
               message={item.message}
               time={item.created_at ? moment(item.created_at).format("YYYY-MM-DD hh:mm a") : ""}
               key={key}
-            />
+            /> */
           ))
         )}
       </div>
