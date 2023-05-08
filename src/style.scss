@@ -348,7 +348,7 @@ button {
 
   .subContent {
     font-size: 12px;
-    color: rgba($textColour, 0.4);
+    color: rgba($textColour, 0.5);
 
     @media screen and (max-width: 480px) {
       font-size: 10px;
@@ -368,7 +368,7 @@ button {
     }
     .subContent {
       font-size: 10px;
-      color: rgba($textColour, 0.4);
+      color: rgba($textColour, 0.5);
     }
   }
 }
