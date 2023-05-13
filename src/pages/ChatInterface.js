@@ -217,14 +217,6 @@ function ChatInterface(props) {
             time={item.created_at ? moment(item.created_at).format("YYYY-MM-DD hh:mm a") : ""}
             key={key}
         />
-
-
-            /* <ChatBubble
-              bubbleType={handleBubbleType(item)}
-              message={item.message}
-              time={item.created_at ? moment(item.created_at).format("YYYY-MM-DD hh:mm a") : ""}
-              key={key}
-            /> */
           ))
         )}
       </div>

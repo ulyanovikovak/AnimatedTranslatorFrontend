@@ -9,7 +9,7 @@ import {
   activeChatUserReducer,
   activeChatUserState,
   triggerRefreshUserListReducer,
-  triggerRefreshUserListState
+triggerRefreshUserListState
 } from "./reducers";
 
 const reduceReducers = (...reducers) => (prevState, value, ...args) => {

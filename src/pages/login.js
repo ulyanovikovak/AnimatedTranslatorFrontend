@@ -138,20 +138,7 @@ export const AuthForm = (props) => {
             src={!props.showPassword ? eyeopen : eyeclose}
             onClick={() => props.setShowPassword(!props.showPassword)}
           />
-          {/*<input
-            value={props.data.language}
-            name="language"
-            onChange={props.onChange}
-            className="input-field"
-            placeholder="language"
-            required
-        />*/}
         </div>
-        {/*{props.login && (*/}
-        {/*  <div className="flex justify-end">*/}
-        {/*    <Link to="/">Forgot Password</Link>*/}
-        {/*  </div>*/}
-        {/*)}*/}
         <button type="submit" disabled={props.loading}>
           {props.loading ? (
             <center>

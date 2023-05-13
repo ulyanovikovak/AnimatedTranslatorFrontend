@@ -196,13 +196,6 @@ export const ProfileModal = (props) => {
                 </select>
               </form>
 
-                {/* <input
-                  name="language"
-                  value={profileData.language}
-                  onChange={onChange}
-                  disabled={props.view}
-                  required
-            /> */}
               </label>
               <label>
                 <span>About</span>
